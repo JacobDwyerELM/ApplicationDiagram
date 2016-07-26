@@ -1,0 +1,35 @@
+{
+	"applicationConnections": [{
+		"name": "AX",
+		"branch": {
+			"nodes": {
+				"Cofax": "appData.applicationNodes.name.Cofax",
+				"GSMS": "applicationNodes.GSMS",
+				"Hyperion": "applicationNodes.Hyperion",
+				"PeopleSoft": "applicationNodes.PeopleSoft",
+				"Simphony": "applicationNodes.Simphony",
+				"Vision": "applicationNodes.Vision"
+			},
+			"edges": {
+				"AX": {
+					"Hyperion": "applicationEdges.AX_Hyperion"
+				},
+				"Cofax": {
+					"AX": "applicationEdges.Cofax_AX"
+				},
+				"GSMS": {
+					"AX": "applicationEdges.GSMS_AX"
+				},
+				"PeopleSoft": {
+					"AX": "applicationEdges.PeopleSoft_AX"
+				},
+				"Simphony": {
+					"AX": "applicationEdges.Simphony_AX"
+				},
+				"Vision": {
+					"AX": "applicationEdges.Vision_AX"
+				}
+			}
+		}
+	}]
+}
