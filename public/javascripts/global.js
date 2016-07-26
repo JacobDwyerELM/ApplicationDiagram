@@ -186,6 +186,7 @@ function removed(){
 	//removes node upon hitting remove button
 	if( split.length===1 ){//removes if split only has 1 word and is not a base node
 		var node = sys.getNode(split[0]);
+		node.data.expanded = false;
 		if(node===undefined){
 			alert("Please enter correct command");
 		}
