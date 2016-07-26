@@ -49,6 +49,12 @@
             gfx.rect(pt.x-w/2, pt.y-10, w,20, 4, {fill:ctx.fillStyle})
             nodeBoxes[node.name] = [pt.x-w/2, pt.y-11, w, 22]
           }
+          //add border to node if it is expanded
+          if(node.data.expanded){
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = 'orange';
+            ctx.stroke();
+          }
 
           // draw the text
           if (label){
