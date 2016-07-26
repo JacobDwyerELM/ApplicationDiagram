@@ -80,7 +80,7 @@ function expandApplicationNode(nodeName){
 		sys.graft(applicationConnections[nodeName]);
 	}
 	else {//case for when entering incorrect input to text box
-		alert("Please enter correct command");
+		alert("Please choose an appropriate node");
 	}
 	
 };
