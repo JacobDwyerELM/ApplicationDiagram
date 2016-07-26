@@ -219,8 +219,17 @@ function removed(){
 		for(key in appData){
 			var node = appData[key];
 			if(node.hasOwnProperty("label")){
-				sys.pruneNode(node);
-			}
+				var nodeObj = sys.getNode(node.label);
+				if(nodeObj!==undefined){
+					nodeObj.data.expanded = false;
+					if(!node.base){
+						sys.pruneNode(nodeObj);
+					}
+					else{
+						clipNode(nodeObj);
+					}
+				}	
+			}	
 		}
 	}
 
