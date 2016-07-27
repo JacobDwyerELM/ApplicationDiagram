@@ -274,15 +274,10 @@
                       for(i=0; i<clickedNode.data.to.length; ++i){//check the to array
                         if(clickedNode.data.to[i]===node.name){//if the node has edge to clickedNode
                           node.data.expanded = false;//set it to not expanded
-                          console.log(node);
-                          if(node.data.base){
-                            clipNode(node);
-                          }
-                          else{
-                            particleSystem.pruneNode(node);//this removes each node connected to clicked as well
+                          //particleSystem.pruneNode(node);//this removes each node connected to clicked as well
                           //from here refer to connected nodes as conNodes. The problem is nodes connected to the
                           //conNodes do not update the expanded field.
-                          }
+                          
                           
                         }
                       }
@@ -290,13 +285,7 @@
                       for(i=0; i<clickedNode.data.from.length; ++i){//check from array
                         if(clickedNode.data.from[i]===node.name){//if node has edge from clickedNode
                           node.data.expanded = false;//set it to not expanded
-                          if(node.data.base){
-                            clipNode(node);
-                          }
-                          else{
-                            particleSystem.pruneNode(node);//test
-                          }
-                          
+                          //particleSystem.pruneNode(node);//test
                         }
                       }            
                     });
