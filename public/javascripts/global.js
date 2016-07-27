@@ -7,12 +7,14 @@ var edgeLabelData;
 var serverData;
 var applicationConnections={};
 
+//when document starts call this function
 $(document).ready(function(){
 	graphSetUp();
 });
 
 //graphSetUp() initializes arbor's Particle System and fills the applicationConnections object with data from
 //MongoDB. applicationConnections will be used in dynamically graphing new nodes upon clicking them.
+//Uncomment log statement at bottom in order to see schema of applicationConnections object.
 function graphSetUp(){
 	//initialize arbor's ParticleSystem
 	sys = arbor.ParticleSystem(6000, 700, 1, false, 55, 0.02, 0.7);
@@ -181,6 +183,7 @@ function generate(){
 function removed(){
 	var inputText = document.getElementById("input");
 	var text = inputText.value;
+	//divides input text based on "_" and " ".
 	var split = text.replace("_", " ").split(" ");
 
 	//removes node upon hitting remove button
