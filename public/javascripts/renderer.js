@@ -68,42 +68,68 @@
           
           //checks the status of node's edges. if there are no edges and node is !base then it will
           //be removed from the system.
-          var to = particleSystem.getEdgesTo(node);
-          var from = particleSystem.getEdgesFrom(node);
+          var to = particleSystem.getEdgesTo(node);//edges to node(node is targe)
+          var from = particleSystem.getEdgesFrom(node);//edges from node(node is source)
+          var count=0;//keeps track of the number of edges
+          var flag1 = false;//if both true then we know to subtract 1 edge from count
+          var flag2 = false;
+          //if node has no edges then prune it.
           if(!node.data.base && to.length === 0 && from.length === 0){
             particleSystem.pruneNode(node);
           }
           
-
-          //check to array for node. checks to see if all nodes in to array are present.
-          //if they are not all present then node.data.expanded=false.
+          //check for nodes in node's to array
           for(var i=0; i<node.data.to.length; ++i){
-            var nodeObj=particleSystem.getNode(node.data.to[i]); 
-            
-            if(nodeObj===undefined){
-              node.data.expanded=false;
-            }
-            else {
-              var edgeArray = particleSystem.getEdges(nodeObj, node);
-              if(edgeArray.length===0){
-                node.data.expanded = false;
-              } 
+            var nodeObj=particleSystem.getNode(node.data.to[i]);
+            particleSystem.eachEdge(function(edge, pt1, pt2){
+              //if node and nodeObj share and edge directed from node->nodeObj
+              if( (edge.source===node && edge.target===nodeObj)){
+                count++;
+                flag1=true;
+              }//end if( (edge.source===.....))
+              //if node and nodeObj share an edge directed from nodeObj->node
+              if((edge.source===nodeObj && edge.target===node)){
+                count++;
+                flag2=true;
+              }              
+            });//end eachEdge
+            //if two edges between node and nodeObj subtract one from count
+            if(flag1 && flag2){
+              count--;
+              flag1=flag2=false;
             }
           }
 
-          //check from array for node. checks to see if all nodes in from array are present.
-          //if they are not all present then node.data.expanded=false.
-          for(var j=0; j<node.data.from.length; ++j){
-            var nodeObj = particleSystem.getNode(node.data.from[j]);
-            if(nodeObj===undefined){
+          //make sure to reset flags to false before next loop
+          flag1=flag2=false;
+          //check for nodes in node's from array
+          for(var i=0; i<node.data.from.length; ++i){
+            var nodeObj=particleSystem.getNode(node.data.from[i]);
+            particleSystem.eachEdge(function(edge, pt1, pt2){
+              //if node and nodeObj share and edge directed from node->nodeObj
+              if( (edge.source===node && edge.target===nodeObj) ){
+                count++;
+                flag1=true;
+              }//end if( (edge.source===.....))
+              //if node and nodeObj share an edge directed from nodeObj->node
+              if( (edge.source===nodeObj && edge.target===node) ){
+                count++;
+                flag2=true;
+              }//end if( (edge.source===.....))
+              
+            });
+            //if two edges between node and nodeObj subtract one from count
+            if(flag1 && flag2){
+              count--;
+              flag1=flag2=false;
+            }
+          }
+          //if count === total number in node's to array plus node's from array then set node.expanded to true
+          if(count===node.data.to.length+node.data.from.length){
+              node.data.expanded=true;
+          }
+          else{
               node.data.expanded=false;
-            }
-            else {
-              var edgeArray = particleSystem.getEdges(node, nodeObj);
-              if(edgeArray.length===0){
-                node.data.expanded = false;
-              } 
-            }
           }
         })//end particleSystem.eachNode    			
 
