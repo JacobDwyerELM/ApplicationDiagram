@@ -65,13 +65,29 @@
             ctx.fillText(label||"", pt.x, pt.y+4)
             ctx.fillText(label||"", pt.x, pt.y+4)
           }
+          
+          //checks the status of node's edges. if there are no edges and node is !base then it will
+          //be removed from the system.
+          var to = particleSystem.getEdgesTo(node);
+          var from = particleSystem.getEdgesFrom(node);
+          if(!node.data.base && to.length === 0 && from.length === 0){
+            particleSystem.pruneNode(node);
+          }
+          
 
           //check to array for node. checks to see if all nodes in to array are present.
           //if they are not all present then node.data.expanded=false.
           for(var i=0; i<node.data.to.length; ++i){
-            var nodeObj=particleSystem.getNode(node.data.to[i]);
+            var nodeObj=particleSystem.getNode(node.data.to[i]); 
+            
             if(nodeObj===undefined){
               node.data.expanded=false;
+            }
+            else {
+              var edgeArray = particleSystem.getEdges(nodeObj, node);
+              if(edgeArray.length===0){
+                node.data.expanded = false;
+              } 
             }
           }
 
@@ -81,6 +97,12 @@
             var nodeObj = particleSystem.getNode(node.data.from[j]);
             if(nodeObj===undefined){
               node.data.expanded=false;
+            }
+            else {
+              var edgeArray = particleSystem.getEdges(node, nodeObj);
+              if(edgeArray.length===0){
+                node.data.expanded = false;
+              } 
             }
           }
         })//end particleSystem.eachNode    			
@@ -234,73 +256,22 @@
 
               var clickedNode = dragged.node;
 
-               //node with no edges, just remove
-              var to = particleSystem.getEdgesTo(clickedNode);
-              var from = particleSystem.getEdgesFrom(clickedNode);
-              if(to.length === 0 && from.length === 0){
-                particleSystem.pruneNode(clickedNode);
-              }
+                if(!clickedNode.data.expanded){//if it is not expanded
+                  expandApplicationNode(clickedNode.name);//expands the clickedNode
+                } 
+                else {//expanded = true so remove node
 
-               if(!clickedNode.data.expanded){//if it is not expanded
-                  clickedNode.data.expanded = true;
-
-                  //node with no edges, just remove
-                  var to = particleSystem.getEdgesTo(clickedNode);
-                  var from = particleSystem.getEdgesFrom(clickedNode);
-                  if(to.length === 0 && from.length === 0 && !clickedNode.data.base){
-                    clickedNode.data.expanded = false;
-                    particleSystem.pruneNode(clickedNode);
-                  } else {
-                    expandApplicationNode(clickedNode.name);//expands nodes
-                  }
-
-                  
-
-               } else {//expanded = true so remove node
-                  clickedNode.data.expanded = false;
-
-                  //does not work with new server set up with production/non-production node
-                  //if clickedNode has server nodes displayed then remove them
-                 /* edgesFromClicked = particleSystem.getEdgesFrom(clickedNode);
-                  particleSystem.eachEdge(function(edge, pt1, pt2){
-                    if( jQuery.inArray(edge, edgesFromClicked)!==-1 && edge.source===clickedNode && edge.target.data.server){
-                      particleSystem.pruneNode(edge.target);                
-                    }
-                  }); */
-
-                  //if it is not a base node
+                  //if it is not a base node prune the node
                   if(!clickedNode.data.base){
-                    particleSystem.eachNode(function(node, pt){
-                      for(i=0; i<clickedNode.data.to.length; ++i){//check the to array
-                        if(clickedNode.data.to[i]===node.name){//if the node has edge to clickedNode
-                          node.data.expanded = false;//set it to not expanded
-                          //particleSystem.pruneNode(node);//this removes each node connected to clicked as well
-                          //from here refer to connected nodes as conNodes. The problem is nodes connected to the
-                          //conNodes do not update the expanded field.
-                          
-                          
-                        }
-                      }
-
-                      for(i=0; i<clickedNode.data.from.length; ++i){//check from array
-                        if(clickedNode.data.from[i]===node.name){//if node has edge from clickedNode
-                          node.data.expanded = false;//set it to not expanded
-                          //particleSystem.pruneNode(node);//test
-                        }
-                      }            
-                    });
-                    //remove clickedNode
                     particleSystem.pruneNode(clickedNode);
                   }//end if not base node
-
-                  //if it is a base node
-                  if(clickedNode.data.base){
+                  
+                  else{//if it is a base node
                     //prune each node if node is !base node and if it is child/to and parent/from of clickedNode
                     particleSystem.prune(function(node, from, to){
                       //check to array
                       for(i=0; i<clickedNode.data.to.length; ++i){
-                        if(clickedNode.data.to[i]===node.name){//if the ndoe has edge to clickedNode
-                          node.data.expanded = false;
+                        if(clickedNode.data.to[i]===node.name){//if the node has edge to clickedNode
                           if(!node.data.base){//if node isnt a base node
                             return true;//if returned true it will prune the node
                           }
@@ -310,7 +281,6 @@
                       //check from array
                       for(i=0; i<clickedNode.data.from.length; ++i){
                         if(clickedNode.data.from[i]===node.name){//if node has edge from clickedNode
-                          node.data.expanded = false;
                           if(!node.data.base){
                             return true;
                           }
@@ -324,7 +294,6 @@
                        for(i=0; i<clickedNode.data.to.length; ++i){
                         if(clickedNode.data.to[i]===node.name){//if the ndoe has edge to clickedNode
                           if(node.data.base && clickedNode.data.base){
-                            node.data.expanded = false;
                             clipNode(clickedNode);
                           }
                         }
@@ -334,15 +303,16 @@
                       for(i=0; i<clickedNode.data.from.length; ++i){
                         if(clickedNode.data.from[i]===node.name){//if node has edge from clickedNode
                           if(node.data.base && clickedNode.data.base){
-                            node.data.expanded = false;
                             clipNode(clickedNode);
                           }
                         }
                       }//end from forloop 
-
                     });//end particleSystem.eachNode
+
                   }//is base node
-                }//end if clicked is not expanded
+
+                }//end if clicked is expanded
+
             } //end if dragged
             return false
           },
