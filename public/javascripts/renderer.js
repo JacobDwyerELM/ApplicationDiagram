@@ -69,15 +69,11 @@
           if(!node.data.server){
             //checks the status of node's edges. if there are no edges and node is !base then it will
             //be removed from the system.
-            var to = particleSystem.getEdgesTo(node);//edges to node(node is targe)
-            var from = particleSystem.getEdgesFrom(node);//edges from node(node is source)
+            pruneLoneNode(node);
+            
             var count=0;//keeps track of the number of edges
             var flag1 = false;//if both true then we know to subtract 1 edge from count
-            var flag2 = false;
-            //if node has no edges then prune it.
-            if(!node.data.base && to.length === 0 && from.length === 0){
-              particleSystem.pruneNode(node);
-            }
+            var flag2 = false;            
           
             //check for nodes in node's to array
             for(var i=0; i<node.data.to.length; ++i){
@@ -249,8 +245,19 @@
               ctx.fillText(label, mid_x, mid_y);
             ctx.restore();
           }
-        })
+        })//end eachEdge
+        
+        //checks the status of node's edges. if there are no edges and node is !base then it will
+        //be removed from the system.
+        function pruneLoneNode(node){
+          var to = particleSystem.getEdgesTo(node);//edges to node(node is targe)
+          var from = particleSystem.getEdgesFrom(node);//edges from node(node is source)
+          if(!node.data.base && to.length === 0 && from.length === 0){
+              particleSystem.pruneNode(node);
+          }
+        }//end pruneLoneNode
 
+        
       },
       initMouseHandling:function(){
         // no-nonsense drag and drop (thanks springy.js)
@@ -470,6 +477,8 @@
             intersect_line_line(p1, p2, bl, tl) ||
             false
     }
+
+
 
     return that
   }//end Renderer
