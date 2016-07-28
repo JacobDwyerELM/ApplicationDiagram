@@ -34,37 +34,43 @@ function graphSetUp(){
 		//console.log(serverData);
 
 		//graph base nodes and fill applicationConnections json with appropriate node data
+		//loop through each node in appData.
 		for(key in appData){
-			var node1 = appData[key]
-			if(node1.hasOwnProperty("label")){
-				var label = node1.label;
-				if(node1.base){
-					sys.addNode(node1.label, node1);
+			var node = appData[key];
+			if(node.hasOwnProperty("label")){
+				var label = node.label;//name of node currently being used
+				if(node.base){//graph if base node
+					sys.addNode(label, node);
 				}
 
-				applicationConnections[node1.label]={"nodes":{},"edges":{}};//creates nodes/edges objects
-				for(var i=0; i<node1.to.length; i++){
-					var concat = node1.to[i].concat("_",label);
-					var edge = edgeData[concat];					
-					applicationConnections[node1.label].nodes[node1.to[i]]=appData[node1.to[i]];//creates each node object under nodes object
-					applicationConnections[node1.label].edges[node1.to[i]]={};//create edge starting at node1.to[i]
+				//creates nodes/edges objects in application connections for each node
+				applicationConnections[label]={"nodes":{},"edges":{}};
+				//loop through node.to array
+				for(var i=0; i<node.to.length; i++){
+					var concat = node.to[i].concat("_",label);//make appropriate server name in form of node.to[i]_label
+					var edge = edgeData[concat];//gets appropriate edge that matches the server from edgeData.					
+					applicationConnections[label].nodes[node.to[i]]=appData[node.to[i]];//creates each node object under nodes object
+					applicationConnections[label].edges[node.to[i]]={};//create edge starting at node.to[i]
+					//if edge isn't found in node.to[i]_label order then it is named in the opposite fashion.
+					//ie label_node.to[i].
 					if(edge==null){
-						concat = label.concat("_", node1.to[i]);
+						concat = label.concat("_", node.to[i]);
 						edge = edgeData[concat];
 					}
-					applicationConnections[node1.label].edges[node1.to[i]][label]=edge;//creates target node object
+					applicationConnections[label].edges[node.to[i]][label]=edge;//creates target node object
 				}
 				
-				applicationConnections[node1.label].edges[label]={};//creates label node's object for edges
-				for(var i=0; i<node1.from.length; i++){
-					var concat = label.concat("_",node1.from[i]);
+				applicationConnections[label].edges[label]={};//creates label node's object for edges
+				//loop through node.from array
+				for(var i=0; i<node.from.length; i++){
+					var concat = label.concat("_",node.from[i]);
 					var edge = edgeData[concat];
-					applicationConnections[node1.label].nodes[node1.from[i]]=appData[node1.from[i]];//add to nodes:{} from from array
+					applicationConnections[label].nodes[node.from[i]]=appData[node.from[i]];//add to nodes:{} from from array
 					if(edge==null){
-						concat = node1.from[i].concat("_",label);
+						concat = node.from[i].concat("_",label);
 						edge = edgeData[concat];
 					}
-					applicationConnections[node1.label].edges[label][node1.from[i]]=edge;
+					applicationConnections[label].edges[label][node.from[i]]=edge;
 				}
 			}//end if(hasOwnProperty)
 		}
