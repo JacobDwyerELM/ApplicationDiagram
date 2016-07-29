@@ -262,7 +262,7 @@
                       for(i=0; i<clickedNode.data.from.length; ++i){
                         if(clickedNode.data.from[i]===node.name){//if node has edge from clickedNode
                           if(!node.data.base){
-                            return true;
+                            return true;//if returned true it will prune the node
                           }
                         }
                       }//end from forloop 
