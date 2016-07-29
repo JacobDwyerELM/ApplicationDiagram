@@ -76,7 +76,14 @@
             }
             //number of edges connected to a node at run time
             var edgeCount=runTimeTo.length + runTimeFrom.length;
-
+            
+            //subtracts edge from servers.
+            for(var i=0; i<runTimeTo.length; ++i){
+              if(runTimeTo[i].source.data.label==="Production" || runTimeTo[i].source.data.label==="Non-Production"){
+                edgeCount--;
+              }
+            }    
+                    
             //if edgeCount === sum of the node's to array.length and node's from array.length
             //then set node.expanded to true
             if(edgeCount===node.data.to.length+node.data.from.length){
