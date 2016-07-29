@@ -103,8 +103,8 @@ function generateEdgeLabel(edgeName){
 	}
 };
 
-//instead of removing node it simply removes all edges and nodes connected to it and keeps the node itself in the system.
-//Usefule for not removing base nodes
+//Used to give illustion that the node is not being removed, just that the edges are being removed
+//Usefull for not removing base nodes
 function clipNode(nName){
 	sys.pruneNode(nName);
 	sys.addNode(nName.name, nName.data);
