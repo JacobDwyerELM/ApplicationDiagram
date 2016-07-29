@@ -218,6 +218,11 @@
         function countEdges(node){
           var flag1=flag2=false;
           var count = 0;
+          console.log(node);
+          var to = particleSystem.getEdgesTo(node);//edges to node(node is targe)
+          var from = particleSystem.getEdgesFrom(node);//edges from node(node is source)
+          console.log(to.length);
+          console.log(from.length);
           //check for nodes in node's to array
             for(var i=0; i<node.data.to.length; ++i){
               var nodeObj=particleSystem.getNode(node.data.to[i]);
@@ -264,6 +269,7 @@
                 flag1=flag2=false;
               }
             }//end from array for loop
+            console.log(count);
             return count;
         }//end countEdges
 
