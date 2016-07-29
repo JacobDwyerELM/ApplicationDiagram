@@ -74,8 +74,8 @@
             if(!node.data.base && runTimeTo.length === 0 && runTimeFrom.length === 0){
               particleSystem.pruneNode(node);
             }
-            var edgeCount = 0;//number of edges at runtime
-            edgeCount = runTimeTo.length + runTimeFrom.length;//set edge count to total number of edges at runtime
+            //number of edges connected to a node at run time
+            var edgeCount=runTimeTo.length + runTimeFrom.length;
 
             //if edgeCount === sum of the node's to array.length and node's from array.length
             //then set node.expanded to true
