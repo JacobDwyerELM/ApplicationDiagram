@@ -67,15 +67,14 @@
           }
           
           if(!node.data.server){
-            //checks the status of node's edges. if there are no edges and node is !base then it will
-            //be removed from the system.
             var runTimeTo = particleSystem.getEdgesTo(node);//edges to node(node is targe)
             var runTimeFrom = particleSystem.getEdgesFrom(node);//edges from node(node is source)
+            var edgeCount=runTimeTo.length + runTimeFrom.length;//number of edges connected to a node at run time
+            //checks the status of node's edges. if there are no edges and node is !base then it will
+            //be removed from the system.
             if(!node.data.base && runTimeTo.length === 0 && runTimeFrom.length === 0){
               particleSystem.pruneNode(node);
             }
-            //number of edges connected to a node at run time
-            var edgeCount=runTimeTo.length + runTimeFrom.length;
             
             //subtracts edge from servers.
             for(var i=0; i<runTimeTo.length; ++i){
