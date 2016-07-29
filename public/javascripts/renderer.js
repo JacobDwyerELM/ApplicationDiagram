@@ -69,11 +69,13 @@
           if(!node.data.server){
             //checks the status of node's edges. if there are no edges and node is !base then it will
             //be removed from the system.
-            pruneLoneNode(node);
-            
-            //counts the number of edges touching a node.
-            //note directedBoth(double arrowed) edges count as two edges.
-            var edgeCount = countEdges(node);
+            var runTimeTo = particleSystem.getEdgesTo(node);//edges to node(node is targe)
+            var runTimeFrom = particleSystem.getEdgesFrom(node);//edges from node(node is source)
+            if(!node.data.base && runTimeTo.length === 0 && runTimeFrom.length === 0){
+              particleSystem.pruneNode(node);
+            }
+            var edgeCount = 0;//number of edges at runtime
+            edgeCount = runTimeTo.length + runTimeFrom.length;//set edge count to total number of edges at runtime
 
             //if edgeCount === sum of the node's to array.length and node's from array.length
             //then set node.expanded to true
@@ -200,80 +202,7 @@
               ctx.fillText(label, mid_x, mid_y);
             ctx.restore();
           }
-        })//end eachEdge
-        
-        //checks the status of node's edges. if there are no edges and node is !base then it will
-        //be removed from the system.
-        function pruneLoneNode(node){
-          var to = particleSystem.getEdgesTo(node);//edges to node(node is targe)
-          var from = particleSystem.getEdgesFrom(node);//edges from node(node is source)
-          if(!node.data.base && to.length === 0 && from.length === 0){
-              particleSystem.pruneNode(node);
-          }
-        }//end pruneLoneNode
-
-        //Counts and returns the number of edges connected to a node.
-        //Does this by using the to/from array data for the node.
-        //Accounts for counting the same edge twice by subtracting 1 from the total number of edges.
-        function countEdges(node){
-          var flag1=flag2=false;
-          var count = 0;
-          console.log(node);
-          var to = particleSystem.getEdgesTo(node);//edges to node(node is targe)
-          var from = particleSystem.getEdgesFrom(node);//edges from node(node is source)
-          console.log(to.length);
-          console.log(from.length);
-          //check for nodes in node's to array
-            for(var i=0; i<node.data.to.length; ++i){
-              var nodeObj=particleSystem.getNode(node.data.to[i]);
-              particleSystem.eachEdge(function(edge, pt1, pt2){
-                //if node and nodeObj share and edge directed from node->nodeObj
-                if( (edge.source===node && edge.target===nodeObj)){
-                  count++;
-                  flag1=true;
-                }//end if( (edge.source===.....))
-                //if node and nodeObj share an edge directed from nodeObj->node
-                if((edge.source===nodeObj && edge.target===node)){
-                  count++;
-                  flag2=true;
-                }              
-              });//end eachEdge
-              //if two edges between node and nodeObj subtract one from count
-              if(flag1 && flag2){
-                count--;
-                flag1=flag2=false;
-              }
-            }//end to array for loop
-
-            //make sure to reset flags to false before next loop
-            flag1=flag2=false;
-            //check for nodes in node's from array
-            for(var i=0; i<node.data.from.length; ++i){
-              var nodeObj=particleSystem.getNode(node.data.from[i]);
-              particleSystem.eachEdge(function(edge, pt1, pt2){
-                //if node and nodeObj share and edge directed from node->nodeObj
-                if( (edge.source===node && edge.target===nodeObj) ){
-                  count++;
-                  flag1=true;
-                }//end if( (edge.source===.....))
-                //if node and nodeObj share an edge directed from nodeObj->node
-                if( (edge.source===nodeObj && edge.target===node) ){
-                  count++;
-                  flag2=true;
-                }//end if( (edge.source===.....))
-              
-              });
-              //if two edges between node and nodeObj subtract one from count
-              if(flag1 && flag2){
-                count--;
-                flag1=flag2=false;
-              }
-            }//end from array for loop
-            console.log(count);
-            return count;
-        }//end countEdges
-
-        
+        })//end eachEdge 
       },
       initMouseHandling:function(){
         // no-nonsense drag and drop (thanks springy.js)
