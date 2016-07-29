@@ -107,11 +107,7 @@ function generateEdgeLabel(edgeName){
 //Usefule for not removing base nodes
 function clipNode(nName){
 	sys.pruneNode(nName);
-    var temp = sys.addNode(nName.name, {'color':nName.data.color, 'shape':nName.data.shape, 
-    	'label':nName.data.label, 'expanded':nName.data.expanded,
-    	'to':nName.data.to, 'from':nName.data.from,
-        'parent':nName.data.parent, 'base':nName.data.base, 'description':nName.data.description
-    });
+	sys.addNode(nName.name, nName.data);
 };
 
 //holds all the cases for generate button
