@@ -1,6 +1,5 @@
 //global variables
 var sys;
-var allData;
 var appData;
 var edgeData;
 var edgeLabelData;
@@ -23,11 +22,10 @@ function graphSetUp(){
 
 	//jQuery AJAX call for JSON from MongoDB
 	$.getJSON('/users/data', function( data ){
-		allData = data;
-		appData = allData[1];
-		edgeData = allData[0];
-		edgeLabelData = allData[2];
-		serverData = allData[3];
+		appData = data[1];
+		edgeData = data[0];
+		edgeLabelData = data[2];
+		serverData = data[3];
 		//console.log(appData);
 		//console.log(edgeData);
 		//console.log(edgeLabelData);
