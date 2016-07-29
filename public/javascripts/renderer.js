@@ -247,25 +247,19 @@
                   }//end if not base node
                   
                   else{//if it is a base node
-                    //prune each node if node is !base node and if it is child/to and parent/from of clickedNode
+                    //prune each node if node is !base node and if it is in to array or from arrau of clickedNode
                     particleSystem.prune(function(node, from, to){
-                      //check to array
-                      for(i=0; i<clickedNode.data.to.length; ++i){
-                        if(clickedNode.data.to[i]===node.name){//if the node has edge to clickedNode
-                          if(!node.data.base){//if node isnt a base node
-                            return true;//if returned true it will prune the node
-                          }
-                        }
-                      }//end to for loop
+                      var toArray= clickedNode.data.to;
+                      var fromArray = clickedNode.data.from;
 
-                      //check from array
-                      for(i=0; i<clickedNode.data.from.length; ++i){
-                        if(clickedNode.data.from[i]===node.name){//if node has edge from clickedNode
-                          if(!node.data.base){
-                            return true;//if returned true it will prune the node
-                          }
+                      if(!node.data.base){
+                        if(jQuery.inArray(node.name, toArray)!==-1){
+                          return true;
                         }
-                      }//end from forloop 
+                        if(jQuery.inArray(node.name, fromArray)!==-1){
+                          return true;
+                        }
+                      }
                     });//end particleSystem.prune
                     
                     //if node is base node and if node is child/to or parent/from of clickedNode then clipNode(clicked)
