@@ -247,11 +247,12 @@
                   }//end if not base node
                   
                   else{//if it is a base node
-                    //prune each node if node is !base node and if it is in to array or from arrau of clickedNode
-                    particleSystem.prune(function(node, from, to){
-                      var toArray= clickedNode.data.to;
-                      var fromArray = clickedNode.data.from;
+                    var toArray= clickedNode.data.to;
+                    var fromArray = clickedNode.data.from;
 
+                    //for each node in the system if it is not a base node and it is in clickedNode's to/from array
+                    //then prune node. Note particleSytem.prune prunes node when it returns true
+                    particleSystem.prune(function(node, from, to){
                       if(!node.data.base){
                         if(jQuery.inArray(node.name, toArray)!==-1){
                           return true;
@@ -262,27 +263,19 @@
                       }
                     });//end particleSystem.prune
                     
-                    //if node is base node and if node is child/to or parent/from of clickedNode then clipNode(clicked)
+                    //if clickedNode is base node and if node is in clickedNode's to/from array 
+                    //then clipNode(clickedNode)
                     particleSystem.eachNode(function(node, pt){
-                       //check to array
-                       for(i=0; i<clickedNode.data.to.length; ++i){
-                        if(clickedNode.data.to[i]===node.name){//if the ndoe has edge to clickedNode
-                          if(node.data.base && clickedNode.data.base){
-                            clipNode(clickedNode);
-                          }
+                      if(node.data.base && clickedNode.data.base){
+                        if(jQuery.inArray(node.name, toArray)!==-1){
+                          clipNode(clickedNode);
                         }
-                      }//end to for loop
-
-                      //check from array
-                      for(i=0; i<clickedNode.data.from.length; ++i){
-                        if(clickedNode.data.from[i]===node.name){//if node has edge from clickedNode
-                          if(node.data.base && clickedNode.data.base){
-                            clipNode(clickedNode);
-                          }
+                        if(jQuery.inArray(node.name, fromArray)!==-1){
+                          clipNode(clickedNode);
                         }
-                      }//end from forloop 
+                      }
                     });//end particleSystem.eachNode
-
+                    
                   }//is base node
 
                 }//end if clicked is expanded
