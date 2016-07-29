@@ -269,8 +269,8 @@
 		"shape": "dot",
 		"label": "SalesForce",
 		"expanded": false,
-		"to": ["Vision"],
-		"from": ["AX", "PeopleSoft", "SalesForceApps", "Vision"],
+		"to": ["PeopleSoft", "Vision"],
+		"from": ["AX", "SalesForceApps", "Vision"],
 		"base": false,
 		"server": false,
 		"description": "Cloud package that other apps are built on. Connections to SalesForce represent all possible connections from SalesForce apps. Reffer to specific app for connection information."
