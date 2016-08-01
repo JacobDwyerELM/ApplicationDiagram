@@ -193,7 +193,7 @@
             ctx.restore()
           }
 
-          //add label attribute to .data
+          //add label attribute to edge.data
           var label = edge.data.label ? $.trim(edge.data.label) : '';
           if (label != '' && ctx){
             mid_x = (tail.x+head.x)/2;
@@ -357,7 +357,6 @@
           div.innerHTML = "";
           div.innerHTML += "NAME: " + nearest.node.name + "<br /><br />";
           div.innerHTML += "DESCRIPTION: " + nearest.node.data.description + "<br /><br />";
-          //div.innerHTML += "EXPANDED: " + nearest.node.data.expanded +"<br /><br />";
           return false;
         });
 
@@ -376,6 +375,7 @@
         }
 
         //called functions for detectEdgeLabel
+        //converts rgb color to hex
         function rgbToHex(r, g, b) {
           if (r > 255 || g > 255 || b > 255)
             throw "Invalid color component";
