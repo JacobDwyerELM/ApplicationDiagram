@@ -123,10 +123,14 @@ function generate(){
 	else if((split.length===2) && (split[1]==="production" || split[1]==="non-production")){
 		var serverName = split[0].concat("Servers");
 		var servers = serverData[serverName];
-		if(split[1]==="production"){
+		var inputNode = sys.getNode(split[0]);
+		if(inputNode===undefined){
+			alert("Specified node is not yet displayed. Please display the node then generate the servers.")
+		}
+		else if(split[1]==="production"){
 			sys.graft(servers.production);
 		}
-		if(split[1]==="non-production"){
+		else if(split[1]==="non-production"){
 			sys.graft(servers.non_production);
 		}
 	}
