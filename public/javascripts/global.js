@@ -124,7 +124,7 @@ function generate(){
 		var serverName = split[0].concat("Servers");
 		var servers = serverData[serverName];
 		var inputNode = sys.getNode(split[0]);
-		if(inputNode===undefined){
+		if(inputNode===undefined){//case for where the app node has not yet been displayed
 			alert("Specified node is not yet displayed. Please display the node then generate the servers.")
 		}
 		else if(split[1]==="production"){
