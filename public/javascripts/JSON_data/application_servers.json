@@ -469,7 +469,7 @@
 					"description": ""
 				},
 				"md1_ap01": {
-					"color": "Purple",
+					"color": "Green",
 					"server": true,
 					"label": "md1-ap01",
 					"description": ""
@@ -693,7 +693,7 @@
 					"description": ""
 				},
 				"csl_ws01": {
-					"color": "Green",
+					"color": "Brown",
 					"server": true,
 					"label": "csl-ws01",
 					"description": ""
@@ -707,13 +707,13 @@
 				"csl_ap12": {
 					"color": "Green",
 					"server": true,
-					"label": "csl-ws01",
+					"label": "csl-ap12",
 					"description": ""
 				},
 				"md1_testap25": {
 					"color": "Green",
 					"server": true,
-					"label": "csl-ws01",
+					"label": "md1-testap25",
 					"description": ""
 				}
 			},
@@ -918,7 +918,7 @@
 					"description": ""
 				},
 				"md1_db18": {
-					"color": "Green",
+					"color": "Purple",
 					"server": true,
 					"label": "md1-db18",
 					"description": "Test"
@@ -963,7 +963,7 @@
 					"description": ""
 				},
 				"md1_db47": {
-					"color": "Green",
+					"color": "Purple",
 					"server": true,
 					"label": "md1-db47",
 					"description": ""
@@ -1048,31 +1048,31 @@
 					"description": ""
 				},
 				"md1_testap16": {
-					"color": "Purple",
+					"color": "Green",
 					"server": true,
 					"label": "md1-testap16",
 					"description": ""
 				},
 				"md1_testap17": {
-					"color": "Purple",
+					"color": "Green",
 					"server": true,
 					"label": "md1-testap17",
 					"description": ""
 				},
 				"md1_testws01": {
-					"color": "Purple",
+					"color": "Brown",
 					"server": true,
 					"label": "md1-testws01",
 					"description": ""
 				},
 				"md1_testws22": {
-					"color": "Purple",
+					"color": "Brown",
 					"server": true,
 					"label": "md1-testws22",
 					"description": ""
 				},
 				"md1_testws25": {
-					"color": "Purple",
+					"color": "Brown",
 					"server": true,
 					"label": "md1-testws25",
 					"description": ""
@@ -1131,7 +1131,7 @@
 					"description": ""
 				},
 				"md1_testap56": {
-					"color": "Purple",
+					"color": "Green",
 					"server": true,
 					"label": "md1-testap56",
 					"description": ""
@@ -1232,37 +1232,37 @@
 					"description": "UAT"
 				},
 				"md1_testdb06": {
-					"color": "Green",
+					"color": "Purple",
 					"server": true,
 					"label": "md1 - testdb06",
 					"description": "Demo. Portal - PSPTDMO, LMS - PSELDMO, HR - PSHRDMO"
 				},
 				"md1_db10": {
-					"color": "Green",
+					"color": "Purple",
 					"server": true,
 					"label": "md1 - db10",
 					"description": "Oracle Secure Enterprise. PSESPRD"
 				},
 				"md1_testdb21": {
-					"color": "Green",
+					"color": "Purple",
 					"server": true,
 					"label": "md1-testdb21",
 					"description": "Oracle Secure Enterprise Search. PSESTST"
 				},
 				"md1_testdb25": {
-					"color": "Green",
+					"color": "Purple",
 					"server": true,
 					"label": "md1-testdb25",
 					"description": "Test. Portal - PSPTTST, LMS - PSELTST, HR - PSHRTST"
 				},
 				"md1_testdb29": {
-					"color": "Green",
+					"color": "Purple",
 					"server": true,
 					"label": "md1-testdb29",
 					"description": "UAT.Portal - PSPTUAT, LMS - PSELUAT, HR - PSHRUAT"
 				},
 				"md1_testdb39": {
-					"color": "Green",
+					"color": "Purple",
 					"server": true,
 					"label": "md1-testdb39",
 					"description": "Development.Portal - PSPTDEV,LMS - PSELDEV, HR - PSHR853"
@@ -1348,7 +1348,7 @@
 					"description": "IB Gateway Report Node"
 				},
 				"md1_db23": {
-					"color": "Green",
+					"color": "Purple",
 					"server": true,
 					"label": "md1-db23",
 					"description": "Production. Portal - PSPTPRD, LMS - PSELPRD, HR - HRPRD"
@@ -1603,19 +1603,19 @@
 					"description": ""
 				},
 				"md1_testap26": {
-					"color": "Purple",
+					"color": "Green",
 					"server": true,
 					"label": "md1 - testap26",
 					"description": ""
 				},
 				"md1_testap54": {
-					"color": "Purple",
+					"color": "Green",
 					"server": true,
 					"label": "md1 - testap54",
 					"description": ""
 				},
 				"md1_testap55": {
-					"color": "Purple",
+					"color": "Green",
 					"server": true,
 					"label": "md1 - testap55",
 					"description": ""
