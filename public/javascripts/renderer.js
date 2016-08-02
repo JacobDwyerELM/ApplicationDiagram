@@ -66,23 +66,24 @@
             ctx.fillText(label||"", pt.x, pt.y+4)
           }
           
+          //prepared variables for uses in following if/else checks
+          var runTimeTo = particleSystem.getEdgesTo(node);//edges to node(node is targe)
+          var runTimeFrom = particleSystem.getEdgesFrom(node);//edges from node(node is source)
+          
+          //checks the status of node's edges. if there are no edges and node is !base then it will
+          //be removed from the system.(Removes lone nodes if not a base node)
+          if(!node.data.base && runTimeTo.length === 0 && runTimeFrom.length === 0){
+            particleSystem.pruneNode(node);
+          }
+
           if(!node.data.server){
-            var runTimeTo = particleSystem.getEdgesTo(node);//edges to node(node is targe)
-            var runTimeFrom = particleSystem.getEdgesFrom(node);//edges from node(node is source)
             var edgeCount=runTimeTo.length + runTimeFrom.length;//number of edges connected to a node at run time
-            //checks the status of node's edges. if there are no edges and node is !base then it will
-            //be removed from the system.
-            if(!node.data.base && runTimeTo.length === 0 && runTimeFrom.length === 0){
-              particleSystem.pruneNode(node);
-            }
-            
             //subtracts edge from servers.
             for(var i=0; i<runTimeTo.length; ++i){
               if(runTimeTo[i].source.data.label==="Production" || runTimeTo[i].source.data.label==="Non-Production"){
                 edgeCount--;
               }
-            }    
-                    
+            }           
             //if edgeCount === sum of the node's to array.length and node's from array.length
             //then set node.expanded to true
             if(edgeCount===node.data.to.length+node.data.from.length){
@@ -92,8 +93,18 @@
               node.data.expanded=false;
             }
           }//end if !server
+          else {//this is responsible for removing server nodes when removing expanded application.
+            //if it is a prod/non-prod node
+            if(node.data.label==="Production" || node.data.label==="Non-Production"){
+              var allWeightTwo = runTimeFrom.every(function(edgeFrom){//.every test the condition on each element in array
+                return edgeFrom.data.weight===2;//returns true if all weights are 2
+              });
+              if(allWeightTwo){//if all weights in runTimeFrom array are two then prune the prod/non-prod node.
+                particleSystem.pruneNode(node);//note that you only have to prune the prod/non-prod node because the system prunes lone nodes automatically.
+              }
+            }
+          }//end else(that is node is a server)
         })//end particleSystem.eachNode    			
-
 
         // draw the edges
         particleSystem.eachEdge(function(edge, pt1, pt2){
@@ -191,7 +202,7 @@
               ctx.closePath();
               ctx.fill();
             ctx.restore()
-          }
+          }     
 
           //add label attribute to edge.data
           var label = edge.data.label ? $.trim(edge.data.label) : '';
@@ -257,7 +268,7 @@
                     var fromArray = clickedNode.data.from;
 
                     //for each node in the system if it is not a base node and it is in clickedNode's to/from array
-                    //then prune node. Note particleSytem.prune prunes node when it returns true
+                    //then prune node. Note particleSystem.prune prunes node when it returns true
                     particleSystem.prune(function(node, from, to){
                       if(!node.data.base){
                         if(jQuery.inArray(node.name, toArray)!==-1){
