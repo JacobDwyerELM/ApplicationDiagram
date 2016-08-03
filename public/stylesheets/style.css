@@ -57,7 +57,7 @@ h1 {
   font-weight: bold;
 }
 
-#input_key{
+#input_instructions{
   position:absolute;
   right:0px;
   top:40%;
@@ -67,4 +67,15 @@ h1 {
   border:1px solid #ccb;
   padding-left:0px;
   background:white;
+}
+#buttonTitle{
+  font-weight: bold;
+}
+
+#serverKeyTitle{
+  font-weight: bold;
+}
+
+#additionalCommandsTitle{
+  font-weight: bold;
 }

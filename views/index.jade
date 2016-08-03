@@ -25,29 +25,37 @@ block content
         #description(style='float:left; width:auto;')
           | Description:
         #nodeDescription(style='float:left; width:auto;')
-    #input_key(style='width:100%; height:60%;')
+    #input_instructions(style='width:100%; height:60%;')
       input#input(type='text', style='width:100%; height:10%', placeholder='Enter commands here')
       button(name='enter_button', onclick='generate()', type='button') Generate
       button(name='clear_button', onclick='removed()', type='button') Remove
-      #key(style='width:100%; height:90%;')
+      #buttonTitle(style='height:auto;')
         br
+        | Generate/Remove Instructions
+        br
+        br
+      #buttonInfo(style='height:auto;')
         |  To generate or remove application nodes you can type the node's name and click the appropriate button.
         br
         |  To generate or remove server nodes for a specific application, type the applications's name followed by the server type(production or non-production). Then click the appropriate button. Example: AX production
+      #serverKeyTitle(style='height:auto;')
+        br
+        | Server Key
         br
         br
-        |  Server Color key:
-        br
+      #serverKey(style='height=auto;')
         |  Application: green, Database: purple, Web: brown, Cloud: light blue.
         br
         br
         | To generate an edge's label type source_target.
         br
         | Example:Vision_AX
-        br
+      #additionalCommandsTitle(style='height:auto;')
         br
         | ADDITIONAL COMMANDS
         br
+        br
+      #additionalCommands(style='height:auto;')
         | Generate Button Commands:
         br
         |  -generate all applications
