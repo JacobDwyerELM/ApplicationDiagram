@@ -362,12 +362,15 @@
         $(canvas).mousemove(handler.detectEdgeLabel);//when mouseover do detectEdgeLabel
         //disable contextmenu from displaying also display info on node on right click
         $(canvas).bind('contextmenu', function(e){
-          var div = document.getElementById('nodeInfo');
+          
           //var content = document.createTextNode("Hello"); possible option if below does not work
           //div.appendChild(content);
+          var div = document.getElementById('nodeName1');
           div.innerHTML = "";
-          div.innerHTML += "NAME: " + nearest.node.name + "<br /><br />";
-          div.innerHTML += "DESCRIPTION: " + nearest.node.data.description + "<br /><br />";
+          div.innerHTML += nearest.node.name;
+          div = document.getElementById('nodeDescription');
+          div.innerHTML = "";
+          div.innerHTML += nearest.node.data.description;
           return false;
         });
 

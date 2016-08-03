@@ -39,6 +39,14 @@ body {
   background:white;
 }
 
+#name{
+  font-weight: bold;
+}
+
+#description{
+  font-weight: bold;
+}
+
 #input_key{
   position:absolute;
   right:0px;

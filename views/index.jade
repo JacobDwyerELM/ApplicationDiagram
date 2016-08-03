@@ -17,6 +17,14 @@ block content
       br
       |  NOTES: Nodes can be dragged. Red nodes cannot be removed.
     #nodeInfo(style='width:100%; height: 15%;')
+      #nameDiv(style='width:100%; height:25%')
+        #name(style='float:left; width:auto;')
+          | Name:
+        #nodeName1(style='float:left; width:auto;')
+      #descriptionDiv(style='width:100%; height:75%')
+        #description(style='float:left; width:auto;')
+          | Description:
+        #nodeDescription(style='float:left; width:auto;')
     #input_key(style='width:100%; height:60%;')
       input#input(type='text', style='width:100%; height:10%', placeholder='Enter commands here')
       button(name='enter_button', onclick='generate()', type='button') Generate
