@@ -16,7 +16,6 @@ body {
 }
 
 #intro{
-  position:absolute;
   right:0px;
   top:0%;
   width:256px;
@@ -42,9 +41,8 @@ h1 {
 }
 
 #nodeInfo{
-  position:absolute;
   right:0px;
-  top:25%;
+  top:0;
   width:256px;
   bottom:0px;
   overflow:hidden;
@@ -62,9 +60,8 @@ h1 {
 }
 
 #input_instructions{
-  position:absolute;
   right:0px;
-  top:40%;
+  top:0;
   width:256px;
   bottom:0px;
   overflow:hidden;

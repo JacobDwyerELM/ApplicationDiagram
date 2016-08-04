@@ -104,7 +104,7 @@
               }
             }
           }//end else(that is node is a server)
-        })//end particleSystem.eachNode    			
+        })//end particleSystem.eachNode         
 
         // draw the edges
         particleSystem.eachEdge(function(edge, pt1, pt2){
