@@ -6,9 +6,8 @@ block content
   #textPanel(style='width:25%; height: 100%;')
     h1(style='height:auto;')
       | APPLICATION DIAGRAM
-    #intro(style='width:100%; height:25%;')
+    #intro(style='width:100%; height:20%;')
       #generalInfoTitle(style='height:auto;')
-        br
         | General Information
       #generalInfo(style='height:auto;')
         | To see the node information right click it.
@@ -35,9 +34,8 @@ block content
       input#input(type='text', style='width:100%; height:65%', placeholder='Enter commands here')
       button(name='enter_button', onclick='generate()', type='button') Generate
       button(name='clear_button', onclick='removed()', type='button') Remove
-    #input_instructions(style='width:100%; height:50%;')
+    #instructions(style='width:100%; height:55%;')
       #buttonTitle(style='height:auto;')
-        br
         | Generate/Remove Button Instructions
       #buttonInfo(style='height:auto;')
         |  To generate or remove application nodes you can type the node's name and click the appropriate button.

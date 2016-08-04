@@ -59,12 +59,12 @@ h1 {
   font-weight: bold;
 }
 
-#input_instructions{
+#instructions{
   right:0px;
   top:0;
   width:256px;
   bottom:0px;
-  overflow:hidden;
+  overflow:auto;
   border:1px solid #ccb;
   padding-left:0px;
   background:white;
