@@ -1,0 +1,1936 @@
+{
+	"ActiveDirectoryServers": {
+		"non_production": {
+			"nodes": {
+				"ActiveDirectoryNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"ActiveDirectoryNon_Production": {
+					"ActiveDirectory": {
+						"weight": 4
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"ActiveDirectoryProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"ActiveDirectoryProduction": {
+					"ActiveDirectory": {
+						"weight": 4
+					}
+				}
+			}
+		}
+	},
+
+	"AXServers": {
+		"non_production": {
+			"nodes": {
+				"AXNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				},
+				"md1_devap38": {
+					"color": "Green",
+					"server": true,
+					"label": "md1 - devap38",
+					"description": "QA"
+				},
+				"md1_devap39": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-devap39",
+					"description": "QA"
+				},
+				"md1_devap40": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-devap40",
+					"description": "QA"
+				},
+				"md1_devap41": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-devap41",
+					"description": "DEV-STG"
+				},
+				"md1_testap27": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap27",
+					"description": "TEST"
+				},
+				"md1_testap28": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap28",
+					"description": "TRAIN"
+				}
+			},
+			"edges": {
+				"AXNon_Production": {
+					"AX": {
+						"weight": 4
+					},
+					"md1_devap38": {
+						"weight": 2
+					},
+					"md1_devap39": {
+						"weight": 2
+					},
+					"md1_devap40": {
+						"weight": 2
+					},
+					"md1_devap41": {
+						"weight": 2
+					},
+					"md1_testap27": {
+						"weight": 2
+					},
+					"md1_testap28": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"AXProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_ap90": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap90",
+					"description": ""
+				},
+				"md1_ap91": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap91",
+					"description": ""
+				},
+				"md1_ap92": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap92",
+					"description": ""
+				},
+				"md1_db39": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-db39",
+					"description": "SQL AX"
+				}
+			},
+			"edges": {
+				"AXProduction": {
+					"AX": {
+						"weight": 4
+					},
+					"md1_ap90": {
+						"weight": 2
+					},
+					"md1_ap91": {
+						"weight": 2
+					},
+					"md1_ap92": {
+						"weight": 2
+					},
+					"md1_db39": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	},
+
+	"BizTalkServers": {
+		"non_production": {
+			"nodes": {
+				"BizTalkNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"BizTalkNon_Production": {
+					"BizTalk": {
+						"weight": 4
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"BizTalkProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"BizTalkProduction": {
+					"BizTalk": {
+						"weight": 4
+					}
+				}
+			}
+		}
+	},
+
+	"BizTalk360Servers": {
+		"non_production": {
+			"nodes": {
+				"BizTalk360Non_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"BizTalk360Non_Production": {
+					"BizTalk360": {
+						"weight": 4
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"BizTalk360Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"BizTalk360Production": {
+					"BizTalk360": {
+						"weight": 4
+					}
+				}
+			}
+		}
+	},
+
+	"CentricityServers": {
+		"non_production": {
+			"nodes": {
+				"CentricityNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				},
+				"md1_ap78": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap78",
+					"description": "Test Server of JBoss"
+				},
+				"md1_testdb23": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-testdb23",
+					"description": "Primary test Database"
+				},
+				"md1_testxa15": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testxa15",
+					"description": ""
+				}
+			},
+			"edges": {
+				"CentricityNon_Production": {
+					"Centricity": {
+						"weight": 4
+					},
+					"md1_ap78": {
+						"weight": 2
+					},
+					"md1_testdb23": {
+						"weight": 2
+					},
+					"md1_testxa15": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"CentricityProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_ap10": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap10",
+					"description": "Report Server"
+				},
+				"md1_ap14": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap14",
+					"description": " Utility Integration Server"
+				},
+				"md1_ap37": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap37",
+					"description": "ePerscription Server"
+				},
+				"md1_ap42": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap42",
+					"description": "CorePoint Server"
+				},
+				"md1_ap51": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap51",
+					"description": "Secure Messaging / Patient Portal"
+				},
+				"md1_ap52": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap52",
+					"description": "Houses / Configure files for DocuTrack"
+				},
+				"md1_ap53": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap53",
+					"description": "Data Transfer Station.Inbound"
+				},
+				"md1_ap54": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap54",
+					"description": "Data Transfer Station.Outbound"
+				},
+				"md1_ap55": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap55",
+					"description": "Data Transfer Station.Clinical"
+				},
+				"md1_ap73": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap73",
+					"description": "Java Boss Server.Runs Reports.Secure Messaging / Patient Portal."
+				},
+				"md1_ap74": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap74",
+					"description": "java Boss Server. CorePoint Server used to export changes."
+				},
+				"md1_db16": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-db16",
+					"description": "Primary database"
+				},
+				"md1_db25": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-db16",
+					"description": "Shared DB used for Secure Messaging / Patient Portal"
+				},
+				"minnow_01": {
+					"color": "Green",
+					"server": true,
+					"label": "minnow-01",
+					"description": "DMZ Web Server for Secure Messaging / Patient Portal"
+				},
+				"xa102__xa117": {
+					"color": "Green",
+					"server": true,
+					"label": "xa102--xa117",
+					"description": "Some are in reserver"
+				}
+			},
+			"edges": {
+				"CentricityProduction": {
+					"Centricity": {
+						"weight": 4
+					},
+					"md1_ap10": {
+						"weight": 2
+					},
+					"md1_ap14": {
+						"weight": 2
+					},
+					"md1_ap37": {
+						"weight": 2
+					},
+					"md1_ap42": {
+						"weight": 2
+					},
+					"md1_ap51": {
+						"weight": 2
+					},
+					"md1_ap52": {
+						"weight": 2
+					},
+					"md1_ap53": {
+						"weight": 2
+					},
+					"md1_ap54": {
+						"weight": 2
+					},
+					"md1_ap55": {
+						"weight": 2
+					},
+					"md1_ap73": {
+						"weight": 2
+					},
+					"md1_ap74": {
+						"weight": 2
+					},
+					"md1_db16": {
+						"weight": 2
+					},
+					"md1_db25": {
+						"weight": 2
+					},
+					"minnow_01": {
+						"weight": 2
+					},
+					"xa102__xa117": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	},
+
+	"CoFaxServers": {
+		"non_production": {
+			"nodes": {
+				"CoFaxNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"CoFaxNon_Production": {
+					"CoFax": {
+						"weight": 4
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"CoFaxProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_ap01": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap01",
+					"description": ""
+				}
+			},
+			"edges": {
+				"CoFaxProduction": {
+					"CoFax": {
+						"weight": 4
+					},
+					"md1_ap01": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	},
+
+	"CorePointServers": {
+		"non_production": {
+			"nodes": {
+				"CorePointNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"CorePointNon_Production": {
+					"CorePoint": {
+						"weight": 4
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"CorePointProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"CorePointProduction": {
+					"CorePoint": {
+						"weight": 4
+					}
+				}
+			}
+		}
+	},
+
+	"DocuTrackServers": {
+		"non_production": {
+			"nodes": {
+				"DocuTrackNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"DocuTrackNon_Production": {
+					"DocuTrack": {
+						"weight": 4
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"DocuTrackProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_db04": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-db04",
+					"description": "Shared DB"
+				},
+				"md1_xa100": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-xa100",
+					"description": ""
+				},
+				"md1_xa101": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-xa101",
+					"description": ""
+				}
+			},
+			"edges": {
+				"DocuTrackProduction": {
+					"DocuTrack": {
+						"weight": 4
+					},
+					"md1_db04": {
+						"weight": 2
+					},
+					"md1_xa100": {
+						"weight": 2
+					},
+					"md1_xa101": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	},
+
+	"EricksonAdvantageServers": {
+		"non_production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		},
+
+		"production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		}
+	},
+
+	"GSMSServers": {
+		"non_production": {
+			"nodes": {
+				"GSMSNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				},
+				"md1_devap01": {
+					"color": "Green",
+					"server": true,
+					"label": "d1-devap01",
+					"description": ""
+				},
+				"md1_testap11": {
+					"color": "Green",
+					"server": true,
+					"label": "d1-testap11",
+					"description": ""
+				},
+				"md1_testap12": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap12",
+					"description": ""
+				},
+				"md1_testap13": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap13",
+					"description": ""
+				},
+				"md1_ws05": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-ws05",
+					"description": ""
+				},
+				"md1_ws07": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-ws07",
+					"description": ""
+				}
+			},
+			"edges": {
+				"GSMSNon_Production": {
+					"GSMS": {
+						"weight": 4
+					},
+					"md1_devap01": {
+						"weight": 2
+					},
+					"md1_testap11": {
+						"weight": 2
+					},
+					"md1_testap12": {
+						"weight": 2
+					},
+					"md1_testap13": {
+						"weight": 2
+					},
+					"md1_ws05": {
+						"weight": 2
+					},
+					"md1_ws07": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"GSMSProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"csl_ws01": {
+					"color": "Brown",
+					"server": true,
+					"label": "csl-ws01",
+					"description": ""
+				},
+				"csl_ap11": {
+					"color": "Green",
+					"server": true,
+					"label": "csl-ap11",
+					"description": ""
+				},
+				"csl_ap12": {
+					"color": "Green",
+					"server": true,
+					"label": "csl-ap12",
+					"description": ""
+				},
+				"md1_testap25": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap25",
+					"description": ""
+				}
+			},
+			"edges": {
+				"GSMSProduction": {
+					"GSMS": {
+						"weight": 4
+					},
+					"csl_ws01": {
+						"weight": 2
+					},
+					"csl_ap11": {
+						"weight": 2
+					},
+					"csl_ap12": {
+						"weight": 2
+					},
+					"md1_testap25": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	},
+
+	"LuminateServers": {
+		"non_production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		},
+
+		"production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		}
+	},
+
+	"HyperionServers": {
+		"non_production": {
+			"nodes": {
+				"HyperionNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				},
+				"md1_devap04": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-devap04",
+					"description": "Essbase Server"
+				},
+				"md1_devws02": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-devws02",
+					"description": "Foundation Services"
+				},
+				"md1_devws03": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-devws03",
+					"description": "Planning/Reporting/Analysis Web Server1"
+				},
+				"md1_testdb5": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-testdb5",
+					"description": "Relational Database Server"
+				}
+			},
+			"edges": {
+				"HyperionNon_Production": {
+					"Hyperion": {
+						"weight": 4
+					},
+					"md1_devap04": {
+						"weight": 2
+					},
+					"md1_devws02": {
+						"weight": 2
+					},
+					"md1_devws03": {
+						"weight": 2
+					},
+					"md1_testdb5": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+
+				"HyperionProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_ap25": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap25",
+					"description": "Foundation Services"
+				},
+				"md1_ap26": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap26",
+					"description": "Essbase Server"
+				},
+				"md1_db36": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-db36",
+					"description": "Relational Database Server"
+				},
+				"md1_ws14": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-ws14",
+					"description": "Planning/Reporting/Analysis"
+				}
+			},
+			"edges": {
+				"HyperionProduction": {
+					"Hyperion": {
+						"weight": 4
+					},
+					"md1_ap25": {
+						"weight": 2
+					},
+					"md1_ap26": {
+						"weight": 2
+					},
+					"md1_db36": {
+						"weight": 2
+					},
+					"md1_ws14": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	},
+
+	"JDEServers": {
+		"non_production": {
+			"nodes": {
+				"JDENon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": "Non-Prod data on Hyperion servers"
+				}
+			},
+			"edges": {
+				"JDENon_Production": {
+					"JDE": {
+						"weight": 4
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"JDEProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": "Prod data on Hyperion servers"
+				}
+			},
+			"edges": {
+				"JDEProduction": {
+					"JDE": {
+						"weight": 4
+					}
+				}
+			}
+		}
+	},
+
+	"KronosServers": {
+		"non_production ": {
+			"nodes": {
+				"KronosNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				},
+				"md1_db18": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-db18",
+					"description": "Test"
+				},
+				"md1_testap62": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap62",
+					"description": ""
+				},
+				"md1_testap63": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap63",
+					"description": ""
+				}
+			},
+			"edges": {
+				"KronosNon_Production": {
+					"Kronos": {
+						"weight": 4
+					},
+					"md1_db18": {
+						"weight": 2
+					},
+					"md1_testap62": {
+						"weight": 2
+					},
+					"md1_testap63": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"KronosProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_db47": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-db47",
+					"description": ""
+				},
+				"md1_ap84": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap84",
+					"description": ""
+				},
+				"md1_ap85": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap85",
+					"description": ""
+				}
+			},
+			"edges": {
+				"KronosProduction": {
+					"Kronos": {
+						"weight": 4
+					},
+					"md1_db47": {
+						"weight": 2
+					},
+					"md1_ap84": {
+						"weight": 2
+					},
+					"md1_ap85": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	},
+
+	"MedicalManagerServers": {
+		"non_production": {
+			"nodes": {
+				"MedicalManagerNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"MedicalManagerNon_Production": {
+					"MedicalManager": {
+						"weight": 4
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"MedicalManagerProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				}
+			},
+			"edges": {
+				"MedicalManagerProduction": {
+					"MedicalManager": {
+						"weight": 4
+					}
+				}
+			}
+		}
+	},
+
+	"NetMenuServers": {
+		"non_production": {
+			"nodes": {
+				"NetMenuNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				},
+				"md1_testap16": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap16",
+					"description": ""
+				},
+				"md1_testap17": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap17",
+					"description": ""
+				},
+				"md1_testws01": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-testws01",
+					"description": ""
+				},
+				"md1_testws22": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-testws22",
+					"description": ""
+				},
+				"md1_testws25": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-testws25",
+					"description": ""
+				}
+			},
+			"edges": {
+				"NetMenuNon_Production": {
+					"NetMenu": {
+						"weight": 4
+					},
+					"md1_testap16": {
+						"weight": 2
+					},
+					"md1_testap17": {
+						"weight": 2
+					},
+					"md1_testws01": {
+						"weight": 2
+					},
+					"md1_testws22": {
+						"weight": 2
+					},
+					"md1_testws25": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"NetMenuProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": "Not yet in production"
+				}
+			},
+			"edges": {
+				"NetMenuProduction": {
+					"NetMenu": {
+						"weight": 4
+					}
+				}
+			}
+		}
+	},
+
+	"OdysseyServers": {
+		"non_production": {
+			"nodes": {
+				"OdysseyNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_testap56": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap56",
+					"description": ""
+				}
+			},
+			"edges": {
+				"OdysseyNon_Production": {
+					"Odyssey": {
+						"weight": 4
+					},
+					"md1_testap56": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"OdysseyProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_db03": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-db03",
+					"description": ""
+				},
+				"md1_ap68": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap68",
+					"description": ""
+				}
+			},
+			"edges": {
+				"OdysseyProduction": {
+					"Odyssey": {
+						"weight": 4
+					},
+					"md1_db03": {
+						"weight": 2
+					},
+					"md1_ap68": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	},
+
+	"PeopleSoftServers": {
+		"non_production": {
+			"nodes": {
+				"PeopleSoftNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_testap08": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap08",
+					"description": "Demo"
+				},
+				"md1_testap09": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap09",
+					"description": "Oracle Secure Enterprise Search"
+				},
+				"md1_ap18": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap18",
+					"description": "Oracle Secure Enterprise Search"
+				},
+				"md1_testap65": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap65",
+					"description": "Development"
+				},
+				"md1_testap66": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap66",
+					"description": "Test"
+				},
+				"md1_testap67": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-testap67",
+					"description": "UAT"
+				},
+				"md1_testdb06": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1 - testdb06",
+					"description": "Demo. Portal - PSPTDMO, LMS - PSELDMO, HR - PSHRDMO"
+				},
+				"md1_db10": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1 - db10",
+					"description": "Oracle Secure Enterprise. PSESPRD"
+				},
+				"md1_testdb21": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-testdb21",
+					"description": "Oracle Secure Enterprise Search. PSESTST"
+				},
+				"md1_testdb25": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-testdb25",
+					"description": "Test. Portal - PSPTTST, LMS - PSELTST, HR - PSHRTST"
+				},
+				"md1_testdb29": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-testdb29",
+					"description": "UAT.Portal - PSPTUAT, LMS - PSELUAT, HR - PSHRUAT"
+				},
+				"md1_testdb39": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-testdb39",
+					"description": "Development.Portal - PSPTDEV,LMS - PSELDEV, HR - PSHR853"
+				}
+
+
+			},
+			"edges": {
+				"PeopleSoftNon_Production": {
+					"PeopleSoft": {
+						"weight": 4
+					},
+					"md1_testap08": {
+						"weight": 2
+					},
+					"md1_testap09": {
+						"weight": 2
+					},
+					"md1_ap18": {
+						"weight": 2
+					},
+					"md1_testap65": {
+						"weight": 2
+					},
+					"md1_testap66": {
+						"weight": 2
+					},
+					"md1_testap67": {
+						"weight": 2
+					},
+					"md1_testdb06": {
+						"weight": 2
+					},
+					"md1_db10": {
+						"weight": 2
+					},
+					"md1_testdb21": {
+						"weight": 2
+					},
+					"md1_testdb25": {
+						"weight": 2
+					},
+					"md1_testdb29": {
+						"weight": 2
+					},
+					"md1_testdb39": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"PeopleSoftProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_ap86": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap86",
+					"description": "PSNT Prcs Scheduler, TCC and Kronos Batch Files run from this server"
+				},
+				"md1_ap87": {
+					"color": "Green",
+					"server": "true",
+					"label": "md1-ap87",
+					"description": "PSNT2 Prcs Scheduler"
+				},
+				"md1_ap88": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap88",
+					"description": "PSNT3 Prcs Scheduler"
+				},
+				"md1_ap89": {
+					"color": "Green",
+					"server": true,
+					"label": "md1 - ap89",
+					"description": "IB Gateway Report Node"
+				},
+				"md1_db23": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-db23",
+					"description": "Production. Portal - PSPTPRD, LMS - PSELPRD, HR - HRPRD"
+				}
+			},
+			"edges": {
+				"PeopleSoftProduction": {
+					"PeopleSoft": {
+						"weight": 4
+					},
+					"md1_ap86": {
+						"weight": 2
+					},
+					"md1_ap87": {
+						"weight": 2
+					},
+					"md1_ap88": {
+						"weight": 2
+					},
+					"md1_ap89": {
+						"weight": 2
+					},
+					"md1_db23": {
+						"weight": 2
+					}
+				}
+
+			}
+		}
+	},
+
+	"PortalServers": {
+		"non_production": {
+			"nodes": {
+				"PortalNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				},
+				"md1_testws24": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-testws24",
+					"description": ""
+				}
+			},
+			"edges": {
+				"PortalNon_Production": {
+					"Portal": {
+						"weight": 4
+					},
+					"md1_testws24": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"PortalProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"minnow_02": {
+					"color": "Green",
+					"server": true,
+					"label": "minnow - 02",
+					"description": ""
+				}
+			},
+			"edges": {
+				"PortalProduction": {
+					"Portal": {
+						"weight": 4
+					},
+					"minnow_02": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	},
+
+	"RemedyForceServers": {
+		"non_production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		},
+
+		"production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		}
+	},
+
+	"RiskonnectServers": {
+		"non_production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		},
+
+		"production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		}
+	},
+
+	"SalesForceServers": {
+		"non_production": {
+			"nodes": {
+				"SalesForceNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				},
+				"CloudHosted": {
+					"color": "SkyBlue",
+					"server": true,
+					"label": "CloudHosted",
+					"description": ""
+				}
+			},
+			"edges": {
+				"SalesForceNon_Production": {
+					"SalesForce": {
+						"weight": 4
+					},
+					"CloudHosted": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"SalesForceProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"CloudHosted": {
+					"color": "SkyBlue",
+					"server": true,
+					"label": "CloudHosted",
+					"description": ""
+				}
+			},
+
+			"edges": {
+				"SalesForceProduction": {
+					"SalesForce": {
+						"weight": 4
+					},
+					"CloudHosted": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	},
+
+	"SalesForceAppsServers": {
+		"non_production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		},
+
+		"production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		}
+	},
+
+	"SalesMarketingServers": {
+		"non_production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		},
+
+		"production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		}
+	},
+
+	"ServiceMaxServers": {
+		"non_production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		},
+
+		"production": {
+			"nodes": {
+
+			},
+			"edges": {
+
+			}
+		}
+	},
+
+	"SimphonyServers": {
+		"non_production": {
+			"nodes": {
+				"SimphonyNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_testap26": {
+					"color": "Green",
+					"server": true,
+					"label": "md1 - testap26",
+					"description": ""
+				},
+				"md1_testap54": {
+					"color": "Green",
+					"server": true,
+					"label": "md1 - testap54",
+					"description": ""
+				},
+				"md1_testap55": {
+					"color": "Green",
+					"server": true,
+					"label": "md1 - testap55",
+					"description": ""
+				}
+			},
+			"edges": {
+				"SimphonyNon_Production": {
+					"Simphony": {
+						"weight": 4
+					},
+					"md1_testap26": {
+						"weight": 2
+					},
+					"md1_testap54": {
+						"weight": 2
+					},
+					"md1_testap55": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"SimphonyProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_ap64": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap64",
+					"description": ""
+				},
+				"md1_ap65": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap65",
+					"description": ""
+				},
+				"md1_ap66": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap66",
+					"description": ""
+				},
+				"md1_ap67": {
+					"color": "Green",
+					"server": true,
+					"label": "md1-ap67",
+					"description": ""
+				},
+				"md1_db25": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-db25",
+					"description": ""
+				}
+			},
+			"edges": {
+				"SimphonyProduction": {
+					"Simphony": {
+						"weight": 4
+					},
+					"md1_ap64": {
+						"weight": 2
+					},
+					"md1_ap65": {
+						"weight": 2
+					},
+					"md1_ap66": {
+						"weight": 2
+					},
+					"md1_ap67": {
+						"weight": 2
+					},
+					"md1_db25": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	},
+
+	"TaleoServers": {
+		"non_production": {
+			"nodes": {
+				"TaleoNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				},
+				"CloudHosted":{
+					"color":"SkyBlue",
+					"server":true,
+					"label":"CloudHosted",
+					"description":""
+				}
+			},
+			"edges": {
+				"TaleoNon_Production": {
+					"Taleo": {
+						"weight": 4
+					},
+					"CloudHosted":{
+						"weight":2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"TaleoProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"CloudHosted":{
+					"color":"SkyBlue",
+					"server":true,
+					"label":"CloudHosted",
+					"description":""
+				}
+			},
+			"edges": {
+				"TaleoProduction": {
+					"Taleo": {
+						"weight": 4
+					},
+					"CloudHosted":{
+						"weight":2
+					}
+				}
+			}
+		}
+	},
+
+	"VisionServers": {
+		"non_production": {
+			"nodes": {
+				"VisionNon_Production": {
+					"color": "Gray",
+					"server": true,
+					"label": "Non-Production",
+					"description": ""
+				},
+				"md1_testdb19": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-testdb19",
+					"description": ""
+				},
+				"md1_testdb30": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-testdb30",
+					"description": ""
+				},
+				"md1_testdb31": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-testdb31",
+					"description": ""
+				},
+				"md1_testdb32": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-testdb32",
+					"description": ""
+				},
+				"md1_testdb33": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-testdb33",
+					"description": ""
+				},
+				"md1_testws05": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-testws05",
+					"description": "ICD10"
+				},
+				"md1_testws06": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-testws06",
+					"description": "DEV"
+				},
+				"md1_testws07": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-testws07",
+					"description": "EA"
+				},
+				"md1_testws08": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-testws08",
+					"description": "TEST"
+				},
+				"md1_testws31": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-testws31",
+					"description": "TRAIN"
+				}
+			},
+			"edges": {
+				"VisionNon_Production": {
+					"Vision": {
+						"weight": 4
+					},
+					"md1_testdb19": {
+						"weight": 2
+					},
+					"md1_testdb30": {
+						"weight": 2
+					},
+					"md1_testdb31": {
+						"weight": 2
+					},
+					"md1_testdb32": {
+						"weight": 2
+					},
+					"md1_testdb33": {
+						"weight": 2
+					},
+					"md1_testws05": {
+						"weight": 2
+					},
+					"md1_testws06": {
+						"weight": 2
+					},
+					"md1_testws07": {
+						"weight": 2
+					},
+					"md1_testws08": {
+						"weight": 2
+					},
+					"md1_testws31": {
+						"weight": 2
+					}
+				}
+			}
+		},
+
+		"production": {
+			"nodes": {
+				"VisionProduction": {
+					"color": "Gray",
+					"server": true,
+					"label": "Production",
+					"description": ""
+				},
+				"md1_db11": {
+					"color": "Purple",
+					"server": true,
+					"label": "md1-db11",
+					"description": ""
+				},
+				"md1_ws36": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-ws36",
+					"description": ""
+				},
+				"md1_ws37": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-ws37",
+					"description": ""
+				},
+				"md1_ws38": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-ws38",
+					"description": ""
+				},
+				"md1_ws39": {
+					"color": "Brown",
+					"server": true,
+					"label": "md1-ws39",
+					"description": ""
+				}
+			},
+			"edges": {
+				"VisionProduction": {
+					"Vision": {
+						"weight": 4
+					},
+					"md1_db11": {
+						"weight": 2
+					},
+					"md1_ws36": {
+						"weight": 2
+					},
+					"md1_ws37": {
+						"weight": 2
+					},
+					"md1_ws38": {
+						"weight": 2
+					},
+					"md1_ws39": {
+						"weight": 2
+					}
+				}
+			}
+		}
+	}
+
+
+}
