@@ -2,7 +2,7 @@ extends layout
 
 block content
   canvas#viewport(width='1050', height='800')
-
+  //text panel on work desktop computer width:365, height:800
   #textPanel(style='width:25%; height: 100%;')
     h1(style='height:auto;')
       | APPLICATION DIAGRAM
@@ -34,7 +34,7 @@ block content
       input#input(type='text', style='width:100%; height:65%', placeholder='Enter commands here')
       button(name='enter_button', onclick='generate()', type='button') Generate
       button(name='clear_button', onclick='removed()', type='button') Remove
-    #instructions(style='width:100%; height:55%;')
+    #instructions(style='width:100%; height:46%;')
       #buttonTitle(style='height:auto;')
         | Generate/Remove Button Instructions
       #buttonInfo(style='height:auto;')
