@@ -1,5 +1,5 @@
 (function(){
-  //
+  //test
   Renderer = function(canvas){
     var canvas = $(canvas).get(0)
     var ctx = canvas.getContext("2d");
