@@ -1,0 +1,117 @@
+{
+	"ActiveDirectory_PeopleSoft": {
+		"label": "To ActiveDirectory:Updated access info. To PeopleSoft: Username/Password"
+	},
+	"AX_Hyperion": {
+		"label": "Extract Financial Data"
+	},
+
+	"BizTalk_BizTalk360": {
+		"label": "Interfaces"
+	},
+	"BizTalk_CorePoint": {
+		"label": "Reconfigue Data"
+	},
+	"BizTalk_Odyssey": {
+		"label": "Reconfig. Demographic Data from Vision"
+	},
+
+	"Centricity_MedicalManager": {
+		"label": "Demographic Data"
+	},
+	"Centricity_Portal": {
+		"label": "ERM Data"
+	},
+
+	"CoFax_AX": {
+		"label": "Document Images"
+	},
+	"CoFax_PeopleSoft": {
+		"label": "Document Images"
+	},
+
+	"CorePoint_MedicalManager": {
+		"label": "Reconfig. Demographic Data to/from Vision"
+	},
+	"CorePoint_NetMenu": {
+		"label": ""
+	},
+	"CorePoint_Vision": {
+		"label": "Demographic Data"
+	},
+
+	"DocuTrack_Centricity": {
+		"label": "Scanned Documents"
+	},
+
+	"GSMS_AX": {
+		"label": "Corprate Housing/Maintance fees"
+	},
+	"GSMS_Vision": {
+		"label": "To GSMS:resident data, To Vision:resident billing"
+	},
+
+	"JDE_Hyperion": {
+		"label": "Extraxt Financial Data"
+	},
+	"Kronos_PeopleSoft": {
+		"label": "To Kronos:changes in Employee info. To PeopleSoft:payroll data."
+	},
+	"NetMenu_Simphony": {
+		"label": "Menu Items"
+	},
+
+	"Odyssey_Vision": {
+		"label": "Accounts receivable"
+	},
+
+	"PeopleSoft_AX": {
+		"label": "Wage Fee Files"
+	},
+	"PeopleSoft_GSMS": {
+		"label": "Employee name/department/id for ticket"
+	},
+	"PeopleSoft_SalesForce": {
+		"label": "Employee Demographic Information"
+	},
+	"PeopleSoft_Taleo": {
+		"label": "To Taleo: Demographic Data. To PeopleSoft: New Hire Data"
+	},
+	"SalesForce_AX": {
+		"label": "Corprate Maintance Fees"
+	},
+	"SalesForce_SalesForceApps": {
+		"label": "Apps Built on SalesForce"
+	},
+
+	"SalesForce_Vision": {
+		"label": "To SalesForce:resident data, to Vision:resident billing"
+	},
+	"SalesForceApps_EricksonAdvantage": {
+		"label": "Resident Info from Vision"
+	},
+	"SalesForceApps_Luminate": {
+		"label": "Demographic Info from PeopleSoft/Vision"
+	},
+	"SalesForceApps_RemedyForce": {
+		"label": "Demographic data from PeopleSoft/Vision. Sends Financial data to Vision/AX"
+	},
+	"SalesForceApps_Riskonnect": {
+		"label": "Demographic Info from PeopleSoft/Vision"
+	},
+	"SalesForceApps_SalesMarketing": {
+		"label": "Sends Demographic data to Vision"
+	},
+	"SalesForceApps_ServiceMax": {
+		"label": "Demographic data from PeopleSoft/Vision. Sends Financial data to Vision/AX"
+	},
+	"Simphony_AX": {
+		"label": "Dinning Revenue"
+	},
+	"Vision_AX": {
+		"label": "Billing from Residents"
+	},
+	"Vision_Portal": {
+		"label": "ERM Data"
+	}
+}
